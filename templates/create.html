@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card mt-4">
+          <div class="p-2 card-title text-center"><h2>New Note</h2></div>
+          <div class="card-body">
+            <form id="note" method="get" action="/insert" class="form-group">
+              <div class="form-group">
+              <label class="my-1 mr-2" for="title">Title :</label>
+              <input type="text" name="title" id="title" placeholder="Enter note title..." class="form-control">
+              </div>
+              <div class="form-group">
+              <label class="my-1 mr-2" for="details">Details :</label>
+              <textarea name="note" id="details" class="form-control noresize mt-2" placeholder="Leave your note here..." rows="12"></textarea>
+              </div>
+              <div class="row">
+                <div class="col-md-2 ml-auto">
+                  <button type="submit" class="btn btn-success col-md-12 mt-2"> Add note</button>
+                </div>
+              </div>
+            </form>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
