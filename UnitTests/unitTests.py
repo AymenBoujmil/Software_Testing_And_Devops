@@ -62,7 +62,6 @@ class TestUpdateNote(TestCase):
         # Then
         mock_execute.assert_called_once()
 
-
 class TestDelete(TestCase):
     @patch("NotesRepo.sqlite3")
     def test_deleteProduct(self, mocked_object):

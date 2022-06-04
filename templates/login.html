@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% if error %}
+  <div class="alert alert-danger" id="error">{{error}}</div>
+{% endif %}
+{% block body %}
+<div class="container">
+	<div class="row d-flex justify-content-center mt-5">
+		<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+			<div class="card py-3 px-2">
+                <h3 class="text-center mb-3 mt-2" style="color: rgb(176,106,252)">Welcome to YourNotes App</h3>
+                <p class="text-center mb-3 mt-2">Please sign In</p>
+				<form class="myform" id="user" method="get" action="/signin">
+					<div class="form-group">
+    					<input type="text" name="username" class="form-control" placeholder="Username">
+  					</div>
+ 					<div class="form-group">
+    					<input type="password" name="password" class="form-control" placeholder="Password">
+  					</div>
+  					<div class="row">
+  						<div class="col-md-6 col-12">
+  							<div class="form-group form-check">
+    							<label class="form-check-label" >Not Registered Yet ?</label>
+  							</div>
+  						</div>
+  						<a href="/register" style="color: #57557A" class="col-md-6 col-12 bn text-center">Sign Up</a>
+  					</div>
+  					<div class="form-group mt-3">
+  						<button type="submit" class="btn btn-block btn-primary btn-lg"><small><i class="far fa-user pr-2"></i>Sign In</small></button>
+  					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

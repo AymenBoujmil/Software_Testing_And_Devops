@@ -6,6 +6,7 @@
       <div class="col">
         <div class="card mt-4">
           <div class="card-body">
+            <button class="btn btn-secondary" onclick="history.back()">Back</button>
             <form id="note" method="get" action="/update/{{_id}}?title={{title}}&note={{note}}" class="form-group">
               <input type="text" name="title" placeholder="Enter note title..." value="{{title}}" class="form-control"/>
               <textarea name="note" class="form-control noresize mt-2" placeholder="Leave your note here..." rows="12">{{note}}</textarea>
