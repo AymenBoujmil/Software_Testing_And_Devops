@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:sqlite:C:\Users\dell\PycharmProjects\WebAppliFlask\posts.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="notes" uuid="fc0142e1-251c-4ea6-9f92-083424fa88f0">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\dell\PycharmProjects\WebAppliFlask\notes.db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

@@ -1,6 +1,13 @@
 {% extends 'layout.html' %}
 
 {% block body %}
+{% with messages = get_flashed_messages() %}
+         {% if messages %}
+               {% for message in messages %}
+                    <div class="alert alert-success text-center" id="success">{{message}}</div>
+               {% endfor %}
+         {% endif %}
+{% endwith %}
 <div class="container">
     <div class="row">
       <div class="col">
