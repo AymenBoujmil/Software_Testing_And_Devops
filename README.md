@@ -3,7 +3,7 @@
 - The user has to be signed in to use the app.
 - **Tools :** Flask - Sqlite3 
 
-![image](https://user-images.githubusercontent.com/56639521/172022143-556d4fe0-390a-4c56-88b5-e2a4db20a6a3.png)
+![image](https://user-images.githubusercontent.com/56639521/172022171-ab6cec3c-d4f6-432d-b603-8e8aef8da52d.png)
 
 ![image](https://user-images.githubusercontent.com/56639521/172022129-2c8a90d5-811d-4536-af1f-4e37cef09e08.png)
 
