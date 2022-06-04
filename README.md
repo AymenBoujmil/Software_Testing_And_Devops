@@ -24,6 +24,18 @@
   
    ### Test Coverage :
    ![image](https://user-images.githubusercontent.com/56639521/172022050-07cbb943-7315-4db8-af4e-82a431195246.png)
+ 
+ ## User Acceptance Testing (UAT):
+  - It is divided into 8 sections:
+   - UAT Scope
+   - UAT Assumptions and Constraints
+   - UAT Risks
+   - UAT Team Roles & Responsibilities
+   - UAT Entry Criteria
+   - UAT Requirements-Based Test Cases
+   - UAT Test Results
+   - Document Signatures
+  
 
       
 
