@@ -27,14 +27,14 @@
  
  ## User Acceptance Testing (UAT):
   - It is divided into 8 sections:
-   - UAT Scope
-   - UAT Assumptions and Constraints
-   - UAT Risks
-   - UAT Team Roles & Responsibilities
-   - UAT Entry Criteria
-   - UAT Requirements-Based Test Cases
-   - UAT Test Results
-   - Document Signatures
+    - UAT Scope
+    - UAT Assumptions and Constraints
+    - UAT Risks
+    - UAT Team Roles & Responsibilities
+    - UAT Entry Criteria
+    - UAT Requirements-Based Test Cases
+    - UAT Test Results
+    - Document Signatures
   
 
       
