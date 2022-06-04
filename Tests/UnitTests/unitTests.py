@@ -2,6 +2,30 @@ import sqlite3
 from unittest import TestCase, main
 from unittest.mock import patch
 import NotesRepo
+import AuthRepo
+
+
+class TestSignUp(TestCase):
+    @patch("AuthRepo.sqlite3")
+    def test_Sign_Up(self, mocked_object):
+        # Given
+        mock_execute = mocked_object.connect.return_value.cursor.return_value.execute
+        # When
+        AuthRepo.signUp('hello', 'mdp')
+        # Then
+        mock_execute.assert_called_once()
+
+
+class TestSignIn(TestCase):
+    @patch("AuthRepo.sqlite3")
+    def test_Sign_In(self, mocked_object):
+        # Given
+        mocked_object.connect().cursor().fetchone.return_value = (0, "hello", "mdp")
+        expected_result = True
+        # When
+        result, error=AuthRepo.signIn('hello', 'mdp')
+        # Then
+        self.assertEqual(expected_result, result)
 
 
 class testShowAllNotes(TestCase):
