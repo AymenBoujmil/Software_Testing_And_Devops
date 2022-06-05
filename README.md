@@ -1,6 +1,7 @@
 # Software Testing and Devops 
   ## App Description
   - Web application in which we can add notes.
+  - User must be logged in in order to use application.
   - **Tools :** Flask - Sqlite3 
   
   ![image](https://user-images.githubusercontent.com/56639521/172022171-ab6cec3c-d4f6-432d-b603-8e8aef8da52d.png)
