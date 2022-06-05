@@ -3,7 +3,7 @@
   - Web application in which we can add notes.
   - **Tools :** Flask - Sqlite3 
   
-  ![image](https://user-images.githubusercontent.com/56639521/172022143-556d4fe0-390a-4c56-88b5-e2a4db20a6a3.png)
+  ![image](https://user-images.githubusercontent.com/56639521/172022171-ab6cec3c-d4f6-432d-b603-8e8aef8da52d.png)
   
   ![image](https://user-images.githubusercontent.com/56639521/172022129-2c8a90d5-811d-4536-af1f-4e37cef09e08.png)
   
@@ -36,7 +36,7 @@
    ![image](https://user-images.githubusercontent.com/56639521/172044870-21b1fd8b-c989-4b08-8aeb-2e27f102f1bb.png)
    
    
-   ## Integration Tests
+   ## Integration Testing
    
    - In Integration test I tested 8 functions (test_register, test_login_page, test_signin_fail, test_signin_success, test_logout, test_notes, test_create_note_page, test_Note_add)
    - There are 3 phases to each test:
@@ -49,12 +49,25 @@
    ```
    coverage run -m pytest
    ```
+   ![image](https://user-images.githubusercontent.com/56639521/172032606-85ab3d4a-08e7-4696-879b-63478b0e3f17.png)
+   
    - To see the result of integration tests along with unit tests coverage we can use the commande :
    ```
     coverage report
    ``` 
+  ![image](https://user-images.githubusercontent.com/56639521/172045527-5df2034a-4bf0-40e0-ae0e-6a13b054dafa.png)
   
- 
-
+  
+  ## User Acceptance Testing (UAT)
+  - It is divided into 8 sections:
+     - UAT Scope
+     - UAT Assumptions and Constraints
+     - UAT Risks
+     - UAT Team Roles & Responsibilities
+     - UAT Entry Criteria
+     - UAT Requirements-Based Test Cases
+     - UAT Test Results
+     - Document Signatures
+  
   
 
