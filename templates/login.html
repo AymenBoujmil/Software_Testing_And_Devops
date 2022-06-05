@@ -1,9 +1,17 @@
 {% extends 'layout.html' %}
-{% if error %}
-  <div class="alert alert-danger" id="error">{{error}}</div>
-{% endif %}
 {% block body %}
 <div class="container">
+	{% if error%}
+	  <div class="alert alert-danger text-center" id="error">{{error}}</div>
+	{% endif %}
+{% with messages = get_flashed_messages() %}
+         {% if messages %}
+               {% for message in messages %}
+                    <div class="alert alert-success text-center" id="success">{{message}}</div>
+               {% endfor %}
+         {% endif %}
+{% endwith %}
+
 	<div class="row d-flex justify-content-center mt-5">
 		<div class="col-12 col-md-8 col-lg-6 col-xl-5">
 			<div class="card py-3 px-2">

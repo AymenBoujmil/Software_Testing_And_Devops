@@ -54,6 +54,7 @@ def noteUpdate(_id, title, note):
     # Close db connection
     db.close()
 
+
 def noteDelete(_id):
     # Connect to db
     db = sqlite3.connect('notes.db')

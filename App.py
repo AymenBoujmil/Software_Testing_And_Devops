@@ -9,42 +9,44 @@ import sqlite3
 from NotesRepo import *
 from functools import wraps
 import AuthRepo
-
-
+import sqli_app_db
 
 
 def create_app():
+    app = Flask(__name__)
+
     @app.route('/register')
     def register():
         return render_template('register.html')
 
-
-    @app.route('/signup')
+    @app.route('/signup', methods=['GET', 'POST'])
     def signup():
-        username = request.args.get('username')
-        password = request.args.get('password')
+        username = request.form.get('username')
+        password = request.form.get('password')
+        if (username is None) and (password is None):
+            username = request.args.get('username')
+            password = request.args.get('password')
         AuthRepo.signUp(username, str(password))
-        flash("User Registered successfully", "success")
+        flash("Registered", "success")
         return render_template('login.html')
 
-
-    @app.route('/signin')
+    @app.route('/signin', methods=['GET', 'POST'])
     def login():
-        print(request.args)
-        username = request.args.get('username')
-        password = request.args.get('password')
-        print(username,'usern')
+            username = request.form.get('username')
+            password = request.form.get('password')
+            if(username is None) and (password is None):
+                username = request.args.get('username')
+                password = request.args.get('password')
 
-        result, error = AuthRepo.signIn(username, str(password))
-        print(result)
-        if result:
-            session['logged_in'] = True
-            session['username'] = username
-            flash('Logged in successfully', 'success')
-            return redirect(url_for("root"))
-        else:
-            return render_template('login.html', error=error)
-
+            print(username)
+            result, error = AuthRepo.signIn(username, str(password))
+            if result:
+                session['logged_in'] = True
+                session['username'] = username
+                flash('Connected', 'success')
+                return redirect(url_for("root"))
+            else:
+                return render_template('login.html', error=error)
 
     def is_logged_in(f):
         @wraps(f)
@@ -57,14 +59,12 @@ def create_app():
 
         return wrap
 
-
     @app.route('/logout')
     @is_logged_in
     def logout():
         session.clear()
-        flash('Logged out successfully', 'success')
+        flash('Logged out', 'success')
         return render_template('login.html')
-
 
     @app.route('/')
     @is_logged_in
@@ -73,19 +73,16 @@ def create_app():
         number = notesNumber(notes)
         return render_template('notes.html', notes=notes, number=number)
 
-
     @app.route('/note/<_id>')
     @is_logged_in
     def note(_id):
         note = fetchone(_id)
         return render_template('note.html', note=note)
 
-
     @app.route('/create')
     @is_logged_in
     def create():
         return render_template('create.html')
-
 
     @app.route('/edit')
     @is_logged_in
@@ -97,39 +94,42 @@ def create_app():
 
         return render_template('edit.html', title=title, note=note, _id=_id)
 
-
-    @app.route('/insert')
+    @app.route('/insert', methods=['GET', 'POST'])
     @is_logged_in
     def insert():
-        # Get request args
-        title = request.args.get('title')
-        note = request.args.get('note')
+        title = request.form.get('title')
+        note = request.form.get('note')
+        if (title is None) and (note is None):
+            title = request.args.get('title')
+            note = request.args.get('note')
         noteAdd(title, note)
-        flash("Note added successfully", "success")
+        flash("Note added", "success")
         return redirect('/')
 
-
-    @app.route('/update/<_id>')
+    @app.route('/update/<_id>', methods=['GET', 'POST'])
     @is_logged_in
     def update(_id):
         # Get request args
-        title = request.args.get('title')
-        note = request.args.get('note')
+        title = request.form.get('title')
+        note = request.form.get('note')
+        if (title is None) and (note is None):
+            title = request.args.get('title')
+            note = request.args.get('note')
         noteUpdate(_id, title, note)
-        flash("Note updated successfully", "success")
+        flash("Note updated", "success")
         return redirect('/')
-
 
     @app.route('/delete/<_id>')
     @is_logged_in
     def delete(_id):
         noteDelete(_id)
-        flash('Note deleted successfully', "success")
+        flash('Note deleted', "success")
         return redirect('/')
+
+    return app
 
 
 if __name__ == '__main__':
-    app = Flask(__name__)
-    create_app()
+    app = create_app()
     app.secret_key = 'flaskSecret'
     app.run(debug=True)

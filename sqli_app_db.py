@@ -1,10 +1,10 @@
 import sqlite3
 
-class dataBaseConfig:
+
+def createDB(dbName):
     conn: sqlite3.Connection
     c: sqlite3.Cursor
-    conn = sqlite3.connect('notes.db')
-    conn2 = sqlite3.connect('user.db')
+    conn = sqlite3.connect(dbName)
     c = conn.cursor()
     c.execute("select sql from sqlite_master where type = 'table' and name = 'NOTES'")
     if not c.fetchall():
@@ -13,9 +13,9 @@ class dataBaseConfig:
                                              title TEXT,
                                              note TEXT
                                              )''')
+        c.execute("INSERT INTO NOTES  (title, note) VALUES ('note','note')")
 
         conn.commit()
-    c = conn2.cursor()
     c.execute("select sql from sqlite_master where type = 'table' and name = 'USER'")
     if not c.fetchall():
         c.execute(''' CREATE TABLE USER (
@@ -23,9 +23,10 @@ class dataBaseConfig:
                                                 username TEXT,
                                                 password TEXT
                                                 )''')
+        c.execute("INSERT INTO USER (username, password) VALUES('admin','admin')")
 
-        conn2.commit()
+        conn.commit()
 
 
-if "__name__" == "__main__":
-    db = dataBaseConfig()
+if __name__ == "__main__":
+    createDB("appDB.db")
