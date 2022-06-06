@@ -24,12 +24,12 @@ class AppE2E(TestCase):
         # inst.driver = webdriver.Chrome(ChromeDriverManager().install())
         inst.driver = webdriver.Chrome(chrome_options=chrome_options)
         inst.driver.implicitly_wait(1)
-        inst.driver.get('http://127.0.0.1:5000')
+        inst.driver.get('http://localhost:5000')
         inst.driver.save_screenshot('./Tests/E2E/Screenshots/home.png')
 
     def test_01_register(self):
         pass
-        self.driver.get("http://127.0.0.1:5000")
+        self.driver.get("http://localhost:5000")
         self.driver.implicitly_wait(10)
 
         register_link = self.driver.find_element(by=By.ID, value='signup')
@@ -57,7 +57,7 @@ class AppE2E(TestCase):
 
     def test_02_signin(self):
         pass
-        self.driver.get("http://127.0.0.1:5000")
+        self.driver.get("http://localhost:5000")
         self.driver.implicitly_wait(10)
 
         username_input = self.driver.find_element(by=By.NAME, value='username')
@@ -80,7 +80,7 @@ class AppE2E(TestCase):
 
     def test_03_add_Note(self):
         pass
-        self.driver.get("http://127.0.0.1:5000")
+        self.driver.get("http://localhost:5000")
         self.driver.implicitly_wait(10)
 
         add_note_button = self.driver.find_element(by=By.ID, value='add_new_note')
@@ -111,6 +111,6 @@ class AppE2E(TestCase):
         def tearDownClass(inst):
             inst.end = time.time()
             elapsedtime = inst.end - inst.start
-            print("\n-------\nE2E test duration: ", "{:.2f}".format(elapsedtime), "seconds")
+            print("Duration of test ", "{:.2f}".format(elapsedtime), "seconds")
             inst.driver.quit()
             inst.app_process.terminate()
