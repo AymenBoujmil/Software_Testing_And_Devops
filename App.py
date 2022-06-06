@@ -132,7 +132,7 @@ def create_app():
 def main():
     app = create_app()
     app.secret_key = 'flaskSecret'
-    app.run(debug=False)
+    app.run('0.0.0.0')
 
 
 if __name__ == '__main__':
