@@ -88,9 +88,9 @@
   ## What is CI CD?
    - CI/CD is a method to frequently deliver apps to customers by introducing automation into the stages of app development. The main concepts attributed to CI/CD are      continuous integration, continuous delivery, and continuous deployment.
    - For the CI:
-    - The workflow had 2 jobs the first one is a Test Job and the second is a Build job.
-    - In the test job we test the app with integration tests, unit tests and e2e tests.
-    - In the build job we build a docker image and pushed it to docker hub
+      - The workflow had 2 jobs the first one is a Test Job and the second is a Build job.
+      - In the test job we test the app with integration tests, unit tests and e2e tests.
+      - In the build job we build a docker image and pushed it to docker hub
    
    ![image](https://user-images.githubusercontent.com/56639521/172193606-68d15665-78ca-4180-a2ce-7f0825c2a483.png)
 
