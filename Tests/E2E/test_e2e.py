@@ -107,10 +107,10 @@ class AppE2E(TestCase):
 
         assert expected_title == result_title.text
 
-        @classmethod
-        def tearDownClass(inst):
-            inst.end = time.time()
-            elapsedtime = inst.end - inst.start
-            print("Duration of test ", "{:.2f}".format(elapsedtime), "seconds")
-            inst.driver.quit()
-            inst.app_process.terminate()
+    @classmethod
+    def tearDownClass(inst):
+        inst.end = time.time()
+        elapsedtime = inst.end - inst.start
+        print("Duration of test ", "{:.2f}".format(elapsedtime), "seconds")
+        inst.driver.quit()
+        inst.app_process.terminate()
