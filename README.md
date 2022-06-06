@@ -58,6 +58,19 @@
    ``` 
   ![image](https://user-images.githubusercontent.com/56639521/172045527-5df2034a-4bf0-40e0-ae0e-6a13b054dafa.png)
   
+  ## E2E testing
+  - In E2E tests I tested 3 functions (test_01_register, test_02_signin, test_03_add_Note).
+  - I used Selenium for this test.
+  - The navigations by the selenium are saved as screenshots. These screen shots are saved in the file Screenshots.
+  - To run e2e tests we can use the command : 
+  ```
+  coverage run -m unittest Tests/E2E/test_e2e.py
+  ``` 
+  
+![image](https://user-images.githubusercontent.com/56639521/172171641-05e5b328-773a-4823-94b6-57db4348237c.png)
+
+
+  
   
   ## User Acceptance Testing (UAT)
   - It is divided into 8 sections:
