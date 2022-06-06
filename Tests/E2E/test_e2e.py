@@ -22,7 +22,7 @@ class AppE2E(TestCase):
         chrome_options.add_argument("--start-maximized")
         chrome_options.add_argument('--disable-gpu')
         # inst.driver = webdriver.Chrome(ChromeDriverManager().install())
-        # inst.driver = webdriver.Chrome(chrome_options=chrome_options)
+        inst.driver = webdriver.Chrome(chrome_options=chrome_options)
         inst.driver.implicitly_wait(1)
         inst.driver.get('http://127.0.0.1:5000')
         inst.driver.save_screenshot('./Tests/E2E/Screenshots/home.png')
