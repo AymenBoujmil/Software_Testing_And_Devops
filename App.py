@@ -133,7 +133,6 @@ def main():
     app = create_app()
     app.secret_key = 'flaskSecret'
     app.run('0.0.0.0')
-    print("hrllo")
 
 
 if __name__ == '__main__':
