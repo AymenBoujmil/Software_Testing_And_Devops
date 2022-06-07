@@ -87,16 +87,25 @@
   # Devops CI/CD Pipeline
   ## What is CI CD?
    - CI/CD is a method to frequently deliver apps to customers by introducing automation into the stages of app development. The main concepts attributed to CI/CD are      continuous integration, continuous delivery, and continuous deployment.
-   - For the CI:
-      - The workflow had 2 jobs the first one is a Test Job and the second is a Build job.
-      - In the test job we test the app with integration tests, unit tests and e2e tests.
-      - In the build job we build a docker image and pushed it to docker hub
+   ### CI:
+   - The workflow had 2 jobs the first one is a Test Job and the second is a Build job.
+   - In the test job we test the app with integration tests, unit tests and e2e tests.
+   - In the build job we build a docker image and pushed it to docker hub
    
    ![image](https://user-images.githubusercontent.com/56639521/172193606-68d15665-78ca-4180-a2ce-7f0825c2a483.png)
 
+  ### CD
+  
+  - I added to the  workflow another job : Deploy job
+  - For the deployment i used ECS.
+  - I created a cluster then a task definition then a service.
+  - The service has 3 tasks.
+  
+  ![image](https://user-images.githubusercontent.com/56639521/172431737-e0aa1659-702a-460c-8585-d2dc18aa3885.png)
   
   
+  - You can access to MyNote app by typing this in the browser link 3.8.22.124:5000.
 
-  
-  
+  ![image](https://user-images.githubusercontent.com/56639521/172431469-dd30e787-d204-49aa-9125-1367ccbeef85.png)
+
 
