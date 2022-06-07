@@ -2,7 +2,7 @@ name: Devops Pipeline
 on: [push]
 env:
   AWS_REGION: eu-west-2
-  ECS_SERVICE: mynote-app               # set this to your Amazon ECS service name
+  ECS_SERVICE: mynote-app-service               # set this to your Amazon ECS service name
   ECS_CLUSTER: aymen-MyNote-App                # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: .aws/task-definition.json # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
