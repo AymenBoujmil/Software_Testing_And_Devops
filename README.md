@@ -104,7 +104,7 @@
   ![image](https://user-images.githubusercontent.com/56639521/172431737-e0aa1659-702a-460c-8585-d2dc18aa3885.png)
   
   
-  - You can access to MyNote app by typing this in the browser link 3.8.22.124:5000.
+  - You can access to MyNote app by typing this in the browser link mynote-app-lb-548946768.eu-west-2.elb.amazonaws.com:5000.
   
   ![image](https://user-images.githubusercontent.com/56639521/172471241-b3042483-2f1c-49e2-af90-71bd241bcbe5.png)
   
