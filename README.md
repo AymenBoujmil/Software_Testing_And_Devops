@@ -106,6 +106,5 @@
   
   - You can access to MyNote app by typing this in the browser link 3.8.22.124:5000.
 
-  ![image](https://user-images.githubusercontent.com/56639521/172431469-dd30e787-d204-49aa-9125-1367ccbeef85.png)
-
+  ![image](https://user-images.githubusercontent.com/56639521/172434188-e6b01554-112b-4cc9-805c-6d29b5e0b855.png)
 
